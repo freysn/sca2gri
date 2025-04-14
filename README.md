@@ -1,6 +1,6 @@
 # Sca2Gri: Scalable Gridified Scatterplots
 
-[![EuroVis 2025](https://img.shields.io/badge/EuroVis-2025-blue)](https://freysn.github.io/papers/sca2gri.pdf)
+[![EuroVis 2025](https://img.shields.io/badge/EuroVis-2025-blue)](https://www.eurovis2025.lu)
 [![Paper](https://img.shields.io/badge/Paper-PDF-blue)](https://freysn.github.io/papers/sca2gri.pdf)
 [![Video](https://img.shields.io/badge/Video-Demo-orange)](https://freysn.github.io/videos/sca2gri_video.mp4)
 
