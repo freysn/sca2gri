@@ -84,7 +84,7 @@ The two use cases featured in the EuroVis 2025 paper can be downloaded here:
 If you use Sca2Gri in your research, please cite the following paper:
 
 ```bibtex
-@article{D01_sca2gri,
+@article{sfrey_sca2gri,
   doi = {10.1111/cgf.70141},
   volume = {44},
   number = {3},
