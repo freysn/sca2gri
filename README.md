@@ -22,7 +22,7 @@ Scatterplots are widely used in exploratory data analysis. Representing data poi
 **Sca2Gri** introduces a grid-based post-processing method designed for analysis scenarios where the number of data points substantially exceeds the number of glyphs that can be reasonably displayed. It supports:
 
 - **Interactive grid generation** for large datasets
-- Flexible user control of glyph size, point-to-cell mapping, and scatterplot focus
+- **Flexible user control** of glyph size, point-to-cell mapping, and scatterplot focus
 - **Scalability to millions of data points** (linear complexity w.r.t. point count)
 
 ---
