@@ -62,25 +62,29 @@ class GUI_sca2gri:
             
         self.init_fig_ax()
 
-        embedding=helper.pkl_load(args.emb)
+        # embedding=helper.pkl_load(args.emb)
 
-        if embedding is None:
-            print(f'embedding could not be loaded from {args.embedding}')
-            sys.exit(0)
+        # if embedding is None:
+        #     print(f'embedding could not be loaded from {args.embedding}')
+        #     sys.exit(0)
 
-        if args.rep.endswith('.pkl'):
-            rep=helper.pkl_load(args.rep)
+        # if args.rep.endswith('.pkl'):
+        #     rep=helper.pkl_load(args.rep)
 
-            if rep is None:
-                print(f'rep could not be loaded from {args.rep}')
-                sys.exit(0)
-        else:
-            import rep_imgs
-            rep=rep_imgs.rep_imgs(args.rep)
+        #     if rep is None:
+        #         print(f'rep could not be loaded from {args.rep}')
+        #         sys.exit(0)
+        # else:
+        #     import rep_imgs
+        #     rep=rep_imgs.rep_imgs(args.rep)
 
-            if len(rep)==0:
-                print(f'rep could not be loaded from {args.rep}')
-                sys.exit(0)
+        #     if len(rep)==0:
+        #         print(f'rep could not be loaded from {args.rep}')
+        #         sys.exit(0)
+
+        import sca2gri_load
+
+        embedding, rep=sca2gri_load.load_emb_rep(args.emb, args.rep)
         
         self.sca2gri=sca2gri.sca2gri(embedding, rep)
 
