@@ -39,4 +39,8 @@ def load_emb_rep(emb_fname, rep_fname):
 
         embedding /= max_extent
 
+    print(f'#elements: embedding {len(embedding)} | rep {len(rep)}')
+
+    assert len(embedding) == len(rep)
+
     return embedding, rep

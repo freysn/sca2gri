@@ -339,7 +339,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     
-    parser.add_argument('--rep', default='case_data/dropglyph_rep.pkl')
+    parser.add_argument('--rep', default='case_data/dropglyph_rep.zip')
     
     parser.add_argument('--emb', default='case_data/dropglyph_emb.pkl')
 
