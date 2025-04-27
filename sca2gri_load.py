@@ -22,4 +22,19 @@ def load_emb_rep(emb_fname, rep_fname):
             print(f'rep could not be loaded from {rep_fname}')
             sys.exit(0)
 
+
+
+    #
+    # normalize embedding
+    #
+    minv=(min(embedding[:, 0]), min(embedding[:, 1]))
+    maxv=(max(embedding[:, 0]), max(embedding[:, 1]))
+
+    max_extent=max(maxv[0]-minv[0],maxv[1]-minv[1])
+
+    embedding[:, 0]-=minv[0]
+    embedding[:, 1]-=minv[1]
+
+    embedding /= max_extent
+
     return embedding, rep
