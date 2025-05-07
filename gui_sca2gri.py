@@ -241,6 +241,7 @@ class GUI_sca2gri:
 
     def init_fig_ax(self):
         self.fig, self.ax = plt.subplots(figsize=(10.24, 7.68))
+        self.fig.canvas.manager.set_window_title('Sca²Gri')
 
 
     def init_rect_selector(self):
