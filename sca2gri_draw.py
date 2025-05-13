@@ -73,7 +73,7 @@ def draw_tiles(fig, ax, rep, grid_dim, cell_size, embedding_box, embedding_idcs,
         ab.offsetbox.set_zoom(rep_zoom_fac*zoom_width*zoom_base)
 
 
-def draw(fig, ax, rep, grid_dim, cell_size, embedding, embedding_box, embedding_idcs, grid_cell_pos, grid_cell_centers, n_points_per_cell, points_per_cell, rep_zoom_fac=0.8, labels=None, do_show_grid_cell_centers=False, do_show_scatterplot=False, do_show_displacement_indicator=True, do_show_rep_frame_n_members=False, do_show_embedding_box=False, displacement_indicator_markersize=3, displacement_indicator_lw=0.5, displacement_indicator_zorder=20, embedding_box_col='gray', embedding_box_ls='-', zoom_boxes=[], do_draw_tiles=True):
+def draw(fig, ax, rep, grid_dim, cell_size, embedding, embedding_box, embedding_idcs, grid_cell_pos, grid_cell_centers, n_points_per_cell, points_per_cell, rep_zoom_fac=0.8, labels=None, do_show_grid_cell_centers=False, do_show_scatterplot=False, do_show_displacement_indicator=True, do_show_rep_frame_n_members=False, do_show_embedding_box=False, displacement_indicator_markersize=3, displacement_indicator_marker='o', displacement_indicator_lw=0.5, displacement_indicator_zorder=20, embedding_box_col='gray', embedding_box_ls='-', zoom_boxes=[], do_draw_tiles=True):
 
 
     cell_width, cell_height=cell_size
@@ -114,7 +114,7 @@ def draw(fig, ax, rep, grid_dim, cell_size, embedding, embedding_box, embedding_
 
         print(f'len(col) {len(col)} for {len(idcs)} idcs')
 
-        ax.scatter(embedding[idcs, 0], embedding[idcs, 1], color=col, s=0.1)
+        ax.scatter(embedding[idcs, 0], embedding[idcs, 1], color=col, s=0.1, marker='o')
 
     x_values=[]
     y_values=[]
@@ -133,7 +133,7 @@ def draw(fig, ax, rep, grid_dim, cell_size, embedding, embedding_box, embedding_
 
             alpha=0.5
             ax.plot((x1, x2), (y1, y2), zorder=zorder, lw=displacement_indicator_lw, color=col, dash_capstyle='round', alpha=alpha)
-            ax.plot(x1, y1, zorder=zorder, color=col, marker='o', markersize=displacement_indicator_markersize, alpha=alpha)
+            ax.plot(x1, y1, zorder=zorder, color=col, marker=displacement_indicator_marker, markersize=displacement_indicator_markersize, alpha=alpha)
 
     if do_show_embedding_box:
         ax.add_patch(matplotlib.patches.Rectangle((embedding_box[0], embedding_box[1]), embedding_box[2]-embedding_box[0], embedding_box[3]-embedding_box[1], linewidth=4, edgecolor=embedding_box_col, facecolor='none', zorder=0, ls=embedding_box_ls))
@@ -236,6 +236,7 @@ def default_kwargs_draw():
             'do_show_rep_frame_n_members': False,\
             'do_show_embedding_box': False,\
             'displacement_indicator_markersize': 3,\
+            'displacement_indicator_marker' : 'o',\
             'displacement_indicator_lw': 0.5,\
             'displacement_indicator_zorder': 20,
             'embedding_box_col':'gray',\
