@@ -8,7 +8,10 @@ from numba.typed import List
 import math
 import helper_sca2gri
 
-import reduce_grid_metal
+import platform
+
+if platform.system()=="Darwin":
+    import reduce_grid_metal
 
 # from numba import config
 
