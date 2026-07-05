@@ -7,8 +7,13 @@ import ctypes
 
 
 def load():
+
+    from pathlib import Path
+
+    # Get the absolute path to the folder containing this script
+    script_dir = Path(__file__).resolve().parent
     
-    with open('reduce_grid_kernel.metal') as f:
+    with open(f'{script_dir}/reduce_grid_kernel.metal') as f:
         shader_str=f.read()
 
     instance=mmetal.load(shader_str, 'reduce_grid')
