@@ -42,6 +42,6 @@ def load_emb_rep(emb_fname, rep_fname):
 
     print(f'#elements: embedding {len(embedding)} | rep {len(rep)}')
 
-    assert len(embedding) == len(rep)
+    assert len(embedding) == len(rep), f'{len(embedding)} == {len(rep)}'
 
     return embedding, rep
