@@ -117,8 +117,11 @@ class sca2gri:
         return tauz*sca2gri.get_embedding_box_dim_x(embedding_box, embedding_box_full)
 
     @staticmethod
-    def tau_to_tauz(tau, embedding_box, embedding_box_full):                    
-        return tau/sca2gri.get_embedding_box_dim_x(embedding_box, embedding_box_full)
+    def tau_to_tauz(tau, embedding_box, embedding_box_full):
+        if tau is None:
+            return None
+        else:
+            return tau/sca2gri.get_embedding_box_dim_x(embedding_box, embedding_box_full)
             
     @staticmethod
     def embedding_box(embedding):
